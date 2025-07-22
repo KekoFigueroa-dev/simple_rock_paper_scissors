@@ -29,3 +29,41 @@ for game_round in range(rounds):
     if p_choice in moves:
         print("\tComputer: " + c_choice)
         print("\tPlayer: " + p_choice)
+        # computer chooses rock
+        if p_choice == "rock" and c_choice == "rock":
+            winner = "tie"
+            phrase = "It is a tie, how boring!"
+        elif p_choice == "paper" and c_choice == "rock":
+            winner = "player"
+            phrase = "Paper covers rock!"
+        elif p_choice == "scissors" and c_choice == "rock":
+            winner = "computer"
+            phrase = "Rock smashes scissors!"
+
+        #Computer chooses paper
+        if p_choice == "rock" and c_choice == "paper":
+            winner = "computer"
+            phrase = "Paper covers rock!"
+        elif p_choice == "paper" and c_choice == "paper":
+            winner = "tie"
+            phrase = "It is a tie, how boring!"
+        elif p_choice == "scissors" and c_choice == "paper":
+            winner = "player"
+            phrase = "Scissors cut paper!"
+
+        #Computer chooses Scissors
+        if p_choice == "rock" and c_choice == "scissors":
+            winner = "player"
+            phrase = "Rock smashes scissors!"
+        elif p_choice == "paper" and c_choice == "scissors":
+            winner = "computer"
+            phrase = "Scissors cut paper!"
+        elif p_choice == "scissors" and c_choice == "scissors":
+            winner = "tie"
+            phrase = "It is a tie, how boring!"
+
+        #Catch for other conditions
+        else:
+            print("Round Winner can't be determined")
+            winner = "tie"
+            phrase = "It is a tie, how boring!"

@@ -41,7 +41,7 @@ for game_round in range(rounds):
             phrase = "Rock smashes scissors!"
 
         #Computer chooses paper
-        if p_choice == "rock" and c_choice == "paper":
+        elif p_choice == "rock" and c_choice == "paper":
             winner = "computer"
             phrase = "Paper covers rock!"
         elif p_choice == "paper" and c_choice == "paper":
@@ -52,7 +52,7 @@ for game_round in range(rounds):
             phrase = "Scissors cut paper!"
 
         #Computer chooses Scissors
-        if p_choice == "rock" and c_choice == "scissors":
+        elif p_choice == "rock" and c_choice == "scissors":
             winner = "player"
             phrase = "Rock smashes scissors!"
         elif p_choice == "paper" and c_choice == "scissors":
@@ -85,3 +85,16 @@ for game_round in range(rounds):
         print("That is not a valid option")
         print("Computer gets the point")
         c_score += 1
+
+#Game has ended, print results
+print("\nFinal Game Results")
+print("\tRounds Played " + str(rounds))
+print("\tPlayer Score: " + str(p_score))
+print("\tComputer Score: "+ str(c_score))
+
+if p_score > c_score:
+    print("\tWinner: PLAYER!")
+elif c_score > p_score:
+    print("\tWinner: Computer :'c")
+else:
+    print(f"Incredible! After {rounds} rounds the result is a TIE!!!")

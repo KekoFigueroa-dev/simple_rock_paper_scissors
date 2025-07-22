@@ -67,3 +67,21 @@ for game_round in range(rounds):
             print("Round Winner can't be determined")
             winner = "tie"
             phrase = "It is a tie, how boring!"
+
+
+        #Display round results
+        print("\t" + phrase)
+        if winner == 'player':
+            print('\tYou win round ' + str(game_round + 1) + ".")
+            p_score += 1
+        elif winner == 'computer':
+            print('\tComputer wins round ' + str(game_round + 1) + ".")
+            c_score += 1
+        else:
+            print("\tThis round was a tie.")
+    
+    #Else the player did not make valid move
+    else:
+        print("That is not a valid option")
+        print("Computer gets the point")
+        c_score += 1

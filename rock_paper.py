@@ -1,13 +1,30 @@
+"""
+Rock, Paper, Scissors Game
+
+A console-based implementation of the classic Rock, Paper, Scissors game.
+Players compete against computer AI over multiple rounds with score tracking
+and win/loss determination based on traditional game rules.
+
+Author: KekoFigueroa-Dev
+"""
 import random
-#Rock Paper Scissors
+
 
 #Welcome message
 print("Welcome to a game of Rock, Paper, Scissors")
 
 #get rounds variable
-rounds = int(input("\nHow many rounds would you like to play?: "))
+while True:
+    try:
+        rounds = int(input("\nHow many rounds would you like to play?: "))
+        if rounds > 0:
+            break
+        else:
+            print("Please enter a whole positive number")
+    except ValueError as e:
+        print("Please enter a whole positive number")
 
-#Initializing variables
+# Initialize game variables
 moves = ['rock','paper','scissors']
 p_score = 0
 c_score = 0
@@ -15,20 +32,20 @@ c_score = 0
 #Main game loop
 for game_round in range(rounds):
     #Print main game screen/get user input
-    print("\nRound " + str(game_round + 1))
-    print("\nPlayer: " + str(p_score) + "\tComputer " + str(c_score))
+    print(f"\nRound {game_round + 1}")
+    print(f"\nPlayer {p_score} \tComputer {c_score}")
     
     #Computer move
     c_index = random.randint(0,2)
     c_choice = moves[c_index]
 
     #Player move
-    p_choice = input("Time to pick...rock, paper, scissors: ".lower().strip())
+    p_choice = input("Time to pick...rock, paper, scissors: ").strip().lower()
 
     #If player makes a valid move check
     if p_choice in moves:
-        print("\tComputer: " + c_choice)
-        print("\tPlayer: " + p_choice)
+        print(f"\tComputer: {c_choice}")
+        print(f"\tPlayer: {p_choice}")
         # computer chooses rock
         if p_choice == "rock" and c_choice == "rock":
             winner = "tie"
@@ -70,12 +87,12 @@ for game_round in range(rounds):
 
 
         #Display round results
-        print("\t" + phrase)
+        print(f"\t{phrase}")
         if winner == 'player':
-            print('\tYou win round ' + str(game_round + 1) + ".")
+            print(f"\tYou win round {game_round + 1}")
             p_score += 1
         elif winner == 'computer':
-            print('\tComputer wins round ' + str(game_round + 1) + ".")
+            print(f"\tComputer wins round {game_round + 1}")
             c_score += 1
         else:
             print("\tThis round was a tie.")
@@ -88,9 +105,9 @@ for game_round in range(rounds):
 
 #Game has ended, print results
 print("\nFinal Game Results")
-print("\tRounds Played " + str(rounds))
-print("\tPlayer Score: " + str(p_score))
-print("\tComputer Score: "+ str(c_score))
+print(f"\tRounds Played {rounds}")
+print(f"\tPlayer Score: {p_score}")
+print(f"\tComputer Score: {c_score}")
 
 if p_score > c_score:
     print("\tWinner: PLAYER!")

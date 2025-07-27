@@ -111,7 +111,9 @@ print(f"\tComputer Score: {c_score}")
 
 if p_score > c_score:
     print("\tWinner: PLAYER!")
+    print("\tCongratulations! You are the champion of Rock, Paper, Scissors!")
 elif c_score > p_score:
     print("\tWinner: Computer :'c")
+    print("\tThe computer has defeated you in Rock, Paper, Scissors.  AI is TAKING OVER!")
 else:
     print(f"Incredible! After {rounds} rounds the result is a TIE!!!")
